@@ -105,10 +105,10 @@ iftImage* FWatershed(iftMImage* img, iftLabeledSet* S) {
 
           float w0 = gradI->val[q];
 
+          // Dynamic by Average
           float* mu = averageTree(tree, R[p]);
-
           float w1 = normaRestarArrays(mu, img->val[q], img->m);
-          // printf("%f %f %f\n", C->val[p], w1, C->val[q]);
+
 
           float tmp = iftMax(C->val[p], w1);
           free(mu);
